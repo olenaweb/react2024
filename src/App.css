@@ -1,0 +1,235 @@
+#root {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 200px 50px 1fr;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+}
+
+.search-panel {
+  grid-row: 1/2;
+  width: 100%;
+  background: rgb(184, 179, 156);
+  color: rgb(207, 207, 6);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+}
+
+.current-page {
+  color: rgb(245, 245, 13);
+  -webkit-text-stroke: 1px #3a3a04;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+h2.search-title {
+  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  max-height: 35px;
+  align-self: center;
+  color: rgb(245, 245, 13);
+  -webkit-text-stroke: 1px #3a3a04;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.search-input {
+  height: 31px;
+}
+
+.search-error-button {
+  grid-column: 3/4;
+  grid-row: 2/3;
+  height: fit-content;
+  align-self: center;
+}
+
+.pagination-panel {
+  grid-row: 2 / 3;
+  background: rgb(184, 179, 156);
+  color: black;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  gap: 11px;
+}
+
+.cards-panel {
+  grid-row: 3 / 4;
+  width: 100%;
+  background: rgb(169, 142, 3);
+  color: white;
+  display: flex;
+}
+
+.detail-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgb(184, 179, 156);
+  max-width: 230px;
+}
+
+.detail-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgb(184, 179, 156);
+}
+
+.detail-page h2 {
+  padding-top: 14px;
+}
+
+.detail-page p {
+  margin: 5px;
+}
+
+.detail-page-exit {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  font-size: clamp(1.125rem, 0.9047rem + 1.1013vw, 1.75rem);
+  font-weight: 800;
+  color: rgb(245, 245, 13);
+  -webkit-text-stroke: 1px #3a3a04;
+}
+
+.detail-page img {
+  width: 80%;
+  height: auto;
+}
+
+.cards {
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 11px 15px;
+  gap: 20px;
+  background: rgb(169, 142, 3);
+}
+
+.card {
+  display: grid;
+  grid-row: auto / span 1;
+  grid-template-rows: subgrid;
+  justify-self: center;
+  justify-items: center;
+  width: 100%;
+  min-width: 150px;
+  max-width: 298px;
+  font-size: clamp(0.875rem, 0.7357rem + 0.5714vw, 1.25rem);
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: 2px 2px 8px 2px rgba(195, 195, 195, 1);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.error-page {
+  grid-row: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: rgb(169, 142, 3);
+  color: white;
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+.error-image-host {
+  width: 100%;
+}
+
+.error-image {
+  width: 100%;
+  height: auto;
+  padding: 20px 0 0;
+}
+
+.rick-morty {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  align-self: center;
+  justify-self: left;
+  margin: 20px 0 0 20px;
+}
+
+.rick-morty-img {
+  width: 100%;
+  max-width: 149px;
+  height: auto;
+}
+
+.error-message {
+  padding: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  background: rgb(169, 142, 3);
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .search-panel {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .search-form {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .search-error-button {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+
+  .rick-morty {
+    grid-row: 1 / 4;
+  }
+}
+
+@media (max-width: 400px) {
+  .cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
