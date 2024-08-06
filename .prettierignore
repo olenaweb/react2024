@@ -1,7 +1,0 @@
-# Ignore artifacts:
-coverage
-node_modules
-public
-
-# Ignore all HTML files:
-**/*.html
